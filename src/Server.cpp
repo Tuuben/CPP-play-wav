@@ -197,14 +197,12 @@ int main(int argc, char* argv[]) {
     }
     AudioCallback(&audio_data, queue, buffer); // Initial filling of the buffer
 
-    std::cout << "Setting up start audio playback" << std::endl;
     // Start playback
     AudioQueueStart(queue, nullptr);
 
     std::cout << "Playing audio. Press Enter to stop..." << std::endl;
     std::cin.get(); // Wait for user input
 
-    std::cout << "cleanuip" << std::endl;
     // Clean up
     AudioQueueStop(queue, true);
     AudioQueueDispose(queue, true);
